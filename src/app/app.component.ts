@@ -7,5 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  x = 10;
+  xx = 10;
+  nome;
+  
+  show(x){
+    this.title=x;
+    console.log(x);
+  }
+
+  showoutro(y){
+    alert(y);
+  }
+
+  mostrar()
+  {
+    console.log(this.nome);
+  }
+
+  mudarvalor(){
+    this.nome=1234678;
+  }
 }

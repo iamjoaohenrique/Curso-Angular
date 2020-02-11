@@ -1,2 +1,16 @@
 <p>hello world</p>
 <app-primeiro></app-primeiro>
+{{ title }}
+{{ 1+1 }}
+
+<input type="button" value="{{ xx }}" class="btn btn-primary"> <br><br>
+
+<input type="button" [value]="xx" class="btn btn-success"> <br><br>
+
+<input type="text" (keyup)="show(texto.value)" (blur)="showoutro(texto.value)" class="form-control" #texto > <br><br>
+
+<input type="text" class="form-control" [(ngModel)]="nome" (keyup)=mostrar()>
+
+<input type="button" class="btn btn-success" (click)=mudarvalor()>
+
+
