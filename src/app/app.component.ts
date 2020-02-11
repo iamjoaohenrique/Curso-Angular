@@ -25,7 +25,7 @@ export class AppComponent {
   }
 
   mudarvalor(){
-    this.nome=123464;
+    this.nome=12344464;
   }
 
   
