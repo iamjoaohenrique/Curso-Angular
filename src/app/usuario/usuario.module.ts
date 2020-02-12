@@ -16,5 +16,6 @@ import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
     UsuarioFormComponent
   ]
 
+  
 })
 export class UsuarioModule { }
