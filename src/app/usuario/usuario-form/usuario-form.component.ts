@@ -11,10 +11,16 @@ export class UsuarioFormComponent implements OnInit {
   usuarios: any = [];
   pokemons: any = [];
   offset: number = 0;
+  limit: number = 0;
 
 
   constructor(private usuarioService: UsuarioService) {
     this.usuarios = this.usuarioService.getAll();
+    this.getAllPokemons();
+  }
+
+  trocarLimite(){
+    this.limit
     this.getAllPokemons();
   }
 
@@ -24,8 +30,9 @@ export class UsuarioFormComponent implements OnInit {
     this.getAllPokemons();
   }
 
+
   private getAllPokemons() {
-    this.usuarioService.getAllPokemons(this.offset).subscribe(
+    this.usuarioService.getAllPokemons(this.offset,this.limit).subscribe(
       (sucess) => {
         console.log(sucess)
         this.pokemons = sucess;
