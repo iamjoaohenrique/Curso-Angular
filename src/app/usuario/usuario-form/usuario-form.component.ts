@@ -13,6 +13,16 @@ export class UsuarioFormComponent implements OnInit {
   offset: number = 0;
   limit: number = 0;
   empregados: any = [];
+  textoBotao = "Meu Botão";
+  isHabilitado = true;
+
+  ligadesliga() {
+    if (this.isHabilitado == true) {
+      this.isHabilitado = false;
+    } else {
+      this.isHabilitado = true;
+    }
+  }
 
   constructor(private usuarioService: UsuarioService) {
     this.usuarios = this.usuarioService.getAll();
@@ -29,10 +39,10 @@ export class UsuarioFormComponent implements OnInit {
       (error) => { console.log(error) }
     ); */
 
-  
+
   }
 
-  trocarLimite(){
+  trocarLimite() {
     this.limit
     this.getAllPokemons();
   }
@@ -56,7 +66,7 @@ export class UsuarioFormComponent implements OnInit {
   }
 
   private getAllPokemons() {
-    this.usuarioService.getAllPokemons(this.offset,this.limit).subscribe(
+    this.usuarioService.getAllPokemons(this.offset, this.limit).subscribe(
       (sucess) => {
         console.log(sucess)
         this.pokemons = sucess;

@@ -1,4 +1,11 @@
+<div class="text-center">
 <p>componente usuario!</p>
+
+<input type="button" class="btn btn-success btn-lg m-5" [class.disabled]="isHabilitado" [value]="textoBotao" >
+
+<input type="button" class="btn btn-lg m-5" (click)='ligadesliga()'>
+
+
 <table class="table table-dark">
     <thead>
         <tr>
@@ -71,3 +78,6 @@
     </tbody>
 </table>
 <input type="button" class="btn-primary btn-lg m-4" (click)="proximaPagina()" value="proxima pagina">
+
+
+</div>
