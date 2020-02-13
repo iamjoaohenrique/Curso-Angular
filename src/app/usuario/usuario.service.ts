@@ -19,7 +19,8 @@ export class UsuarioService {
   }
 
   getAllPokemons(offset,limit){
-    return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
+    //return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
+    return this.http.get(`https://pokeapi.co/api/v2/pokemon-form?limit=${limit}&offset=${offset}`);
   }
 
   getAllEmpregados(){
