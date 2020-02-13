@@ -1,9 +1,9 @@
 <div class="text-center">
 <p>componente usuario!</p>
 
-<input type="button" class="btn btn-success btn-lg m-5" [class.disabled]="isHabilitado" [value]="textoBotao" >
+<input type="button" class="btn btn-success btn-lg m-5" [class.disabled]="isHabilitado" [style.background-color]="getColor()" [value]="textoBotao" >
 
-<input type="button" class="btn btn-lg m-5" (click)='ligadesliga()'>
+<input type="button" class="btn btn-primary btn-lg m-5" (click)='ligadesliga()'>
 
 
 <table class="table table-dark">

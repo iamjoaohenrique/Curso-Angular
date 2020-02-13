@@ -15,13 +15,21 @@ export class UsuarioFormComponent implements OnInit {
   empregados: any = [];
   textoBotao = "Meu Botão";
   isHabilitado = true;
+  color = "yellow";
 
   ligadesliga() {
-    if (this.isHabilitado == true) {
-      this.isHabilitado = false;
-    } else {
-      this.isHabilitado = true;
-    }
+    // if (this.isHabilitado == true) {
+    //   this.isHabilitado = false;
+    // } else {
+    //   this.isHabilitado = true;
+    // }
+
+    // this.isHabilitado == true ? this.isHabilitado = false : this.isHabilitado = true;
+
+    // this.isHabilitado = this.isHabilitado == true ? false : true;
+
+    this.isHabilitado = !this.isHabilitado;
+    this.color = this.isHabilitado == true ? 'red' : 'pink';
   }
 
   constructor(private usuarioService: UsuarioService) {
@@ -40,6 +48,10 @@ export class UsuarioFormComponent implements OnInit {
     ); */
 
 
+  }
+  
+  getColor(){
+    return this.color;
   }
 
   trocarLimite() {
