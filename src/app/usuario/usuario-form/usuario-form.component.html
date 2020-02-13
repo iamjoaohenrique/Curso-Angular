@@ -1,7 +1,7 @@
 <div class="text-center">
 <p>componente usuario!</p>
 
-<app-usuario-detalhe [pokemonDetalhe]="pokemonSelecionado"></app-usuario-detalhe>
+
 
 <input type="button" class="btn btn-success btn-lg m-5" [class.disabled]="isHabilitado" [style.background-color]="getColor()" [value]="textoBotao" >
 
@@ -29,7 +29,7 @@
 </table>
 
 
-
+<app-usuario-detalhe *ngIf="pokemonSelecionado != null"[pokemonDetalhe]="pokemonSelecionado"></app-usuario-detalhe>
 
 
 <!-- pokemons -->
@@ -51,12 +51,12 @@
 </table>
 <input type="button" class="btn-primary mb-2" (click)="proximaPagina()" value="proxima pagina">
 
-<!--<select id="" #valor (click)="trocarLimite(valor.value)"> 
+<select class="form-control" #limit (change)="trocarLimit(limit.value)"> 
     <option value="10">10</option>
     <option value="20">20</option>
     <option value="30">30</option>
     <option value="40">40</option>
-  </select>-->
+  </select>
 
 
 <!-- pokemons -->
