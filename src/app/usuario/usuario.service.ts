@@ -22,4 +22,8 @@ export class UsuarioService {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`);
   }
 
+  getAllEmpregados(){
+    return this.http.get(`http://dummy.restapiexample.com/api/v1/employees`);
+  }
+  
 }

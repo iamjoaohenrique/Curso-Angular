@@ -12,11 +12,24 @@ export class UsuarioFormComponent implements OnInit {
   pokemons: any = [];
   offset: number = 0;
   limit: number = 0;
-
+  empregados: any = [];
 
   constructor(private usuarioService: UsuarioService) {
     this.usuarios = this.usuarioService.getAll();
     this.getAllPokemons();
+    this.getAllEmpregados();
+
+    /* this.empregados = this.usuarioService.getAllEmpregados();
+
+    this.usuarioService.getAllEmpregados().subscribe(
+      (sucess) => {
+        console.log(sucess);
+        this.empregados = sucess;
+      },
+      (error) => { console.log(error) }
+    ); */
+
+  
   }
 
   trocarLimite(){
@@ -30,6 +43,17 @@ export class UsuarioFormComponent implements OnInit {
     this.getAllPokemons();
   }
 
+  private getAllEmpregados() {
+    this.usuarioService.getAllEmpregados().subscribe(
+      (sucess) => {
+        console.log(sucess)
+        this.empregados = sucess;
+      },
+      (error) => {
+        console.log(error)
+      }
+    );
+  }
 
   private getAllPokemons() {
     this.usuarioService.getAllPokemons(this.offset,this.limit).subscribe(
