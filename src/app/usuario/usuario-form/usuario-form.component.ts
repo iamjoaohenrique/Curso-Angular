@@ -16,6 +16,7 @@ export class UsuarioFormComponent implements OnInit {
   textoBotao = "Meu Botão";
   isHabilitado = true;
   color = "yellow";
+  pokemonSelecionado: any = [];
 
   ligadesliga() {
     // if (this.isHabilitado == true) {
@@ -49,14 +50,26 @@ export class UsuarioFormComponent implements OnInit {
 
 
   }
-  
-  getColor(){
+
+  getColor() {
     return this.color;
   }
 
   trocarLimite() {
     this.limit
     this.getAllPokemons();
+  }
+
+  selecionarPokemon(url){
+    this.usuarioService.getOnePokemon(url).subscribe(
+      (sucess) => {
+        console.log(sucess)
+        this.pokemonSelecionado = sucess;
+      },
+      (error) => {
+        console.log(error)
+      }
+    )
   }
 
   proximaPagina() {

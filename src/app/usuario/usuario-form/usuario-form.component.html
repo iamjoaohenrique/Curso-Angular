@@ -1,7 +1,7 @@
 <div class="text-center">
 <p>componente usuario!</p>
 
-<app-usuario-detalhe></app-usuario-detalhe>
+<app-usuario-detalhe [pokemonDetalhe]="pokemonSelecionado"></app-usuario-detalhe>
 
 <input type="button" class="btn btn-success btn-lg m-5" [class.disabled]="isHabilitado" [style.background-color]="getColor()" [value]="textoBotao" >
 
@@ -45,7 +45,7 @@
         <tr *ngFor="let u of pokemons.results">
             <td> {{ u.name }}</td>
             <td> {{ u.url }}</td>
-            <td><a [href]="u.url" target="blank">ver mais detalhes</a></td>
+            <td><a href="#detalhe" (click)="selecionarPokemon(u.url)">ver mais detalhes</a></td>
         </tr>
     </tbody>
 </table>

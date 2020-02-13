@@ -1,1 +1,27 @@
 <p>usuario-detalhe works!</p>
+<div id="detalhe"class="row d-flex justify-content-center">
+    <div class="card " style="width: auto;">
+        <div class="card-body">
+            <h5 class="card-title">Abilities</h5>
+            <p class="card-text">{{ pokemonDetalhe.name}} </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Slot</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of pokemonDetalhe.abilities">
+                        <td> {{ u.slot }}</td>
+                        <td> {{ u.ability.name }}</td>
+                        <td> {{ u.ability.url }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- {{ pokemonDetalhe|json }} -->
