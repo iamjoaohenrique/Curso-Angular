@@ -9,9 +9,7 @@ import { UsuarioService } from '../usuario.service';
 export class UsuarioFormComponent implements OnInit {
 
   usuarios: any = [];
-  pokemons: any = [];
-  offset: number = 0;
-  limit: number = 10;
+
   empregados: any = [];
   textoBotao = "Meu Botão";
   isHabilitado = true;
@@ -35,7 +33,6 @@ export class UsuarioFormComponent implements OnInit {
 
   constructor(private usuarioService: UsuarioService) {
     this.usuarios = this.usuarioService.getAll();
-    this.getAllPokemons();
     this.getAllEmpregados();
 
     /* this.empregados = this.usuarioService.getAllEmpregados();
@@ -55,46 +52,11 @@ export class UsuarioFormComponent implements OnInit {
     return this.color;
   }
 
-  selecionarPokemon(url){
-    this.usuarioService.getOnePokemon(url).subscribe(
-      (sucess) => {
-        console.log(sucess)
-        this.pokemonSelecionado = sucess;
-      },
-      (error) => {
-        console.log(error)
-      }
-    )
-  }
-
-  proximaPagina() {
-    //this.offset = this.offset + 20 ;
-    this.offset += 20;
-    this.getAllPokemons();
-  }
-
-  trocarLimit(value) {
-    this.limit=value;
-    this.getAllPokemons();
-  }
-
   private getAllEmpregados() {
     this.usuarioService.getAllEmpregados().subscribe(
       (sucess) => {
         console.log(sucess)
         this.empregados = sucess;
-      },
-      (error) => {
-        console.log(error)
-      }
-    );
-  }
-
-  private getAllPokemons() {
-    this.usuarioService.getAllPokemons(this.offset, this.limit).subscribe(
-      (sucess) => {
-        console.log(sucess)
-        this.pokemons = sucess;
       },
       (error) => {
         console.log(error)

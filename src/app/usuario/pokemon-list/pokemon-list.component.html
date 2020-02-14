@@ -1,0 +1,35 @@
+<app-pokemon-detalhe *ngIf="pokemonSelecionado" [pokemonDetalhe]="pokemonSelecionado"></app-pokemon-detalhe>
+
+<!-- pokemons -->
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">URL</th>
+            <th scope="col">Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of pokemons.results">
+
+            <td> {{ u.name }} </td>
+            <td> {{ u.url }}</td>
+            <td> <a href="#detalhe" (click)="selecionarPokemon(u.url)">Ver mais detalhes</a> </td>
+
+        </tr>
+
+    </tbody>
+</table>
+
+<div class="text-center">
+    <button class="btn-primary btn-lg mr-2" (click)="proximaPagina()"> Próxma Página </button>
+    <button class="btn-primary btn-lg"> Página Anterior </button>
+
+    <select class="form-control" #limit (change)="trocarLimit(limit.value)">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+    </select>
+
+</div>

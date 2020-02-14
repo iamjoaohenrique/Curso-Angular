@@ -1,0 +1,31 @@
+<p grifarParagrafo >usuario-detalhe works!</p>
+
+<div id="detalhe" class="row d-flex justify-content-center">
+    <div class="card mb-4 mt-4" style="width: auto;">
+
+        <div class="card-body">
+            <h5 class="card-title">Imagens</h5>
+
+            <table class="table">
+                <thead>
+                  <tr>        
+                    
+                    <th  scope="col">Name</th>
+                    <th scope="col">Imagem</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr >                                        
+                    <td grifarParagrafo > {{ pokemonDetalhe.name | dataPipe }}</td>
+                    <td> <img [src]="pokemonDetalhe.sprites?.front_default" alt="">  </td>                    
+                  </tr>                  
+                </tbody>
+              </table>
+        </div>
+
+    </div>    
+</div>
+
+<!-- {{ pokemonDetalhe | json }} -->
+    
+
