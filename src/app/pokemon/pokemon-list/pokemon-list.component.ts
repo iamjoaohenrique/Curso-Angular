@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../usuario.service';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -14,7 +14,7 @@ export class PokemonListComponent implements OnInit {
   offset : number = 0;
   limit : number = 10;
     
-  constructor(private usuarioService : UsuarioService) {           
+  constructor(private PokemonService : PokemonService) {           
     this.getAllPokemons();    
   }
   
@@ -33,7 +33,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   private getAllPokemons() {
-    this.usuarioService.getAllPokemons(this.offset, this.limit).subscribe(
+    this.PokemonService.getAllPokemons(this.offset, this.limit).subscribe(
       (success) => {
         console.log (success);
         this.pokemons = success;
@@ -43,7 +43,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   selecionarPokemon(url){
-    this.usuarioService.getOnePokemon(url).subscribe(
+    this.PokemonService.getOnePokemon(url).subscribe(
       (response) => {
         this.pokemonSelecionado = response;
         console.log ( this.pokemonSelecionado );

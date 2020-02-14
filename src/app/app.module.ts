@@ -1,3 +1,4 @@
+import { PokemonModule } from './pokemon/pokemon.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     FormsModule,
     UsuarioModule,
+    PokemonModule,
     HttpClientModule
     
   ],
