@@ -1,4 +1,4 @@
-<p grifarParagrafo >usuario-detalhe works!</p>
+<p grifarParagrafo>usuario-detalhe works!</p>
 
 <div id="detalhe" class="row d-flex justify-content-center">
     <div class="card mb-4 mt-4" style="width: auto;">
@@ -8,24 +8,22 @@
 
             <table class="table">
                 <thead>
-                  <tr>        
-                    
-                    <th  scope="col">Name</th>
-                    <th scope="col">Imagem</th>
-                  </tr>
+                    <tr>
+
+                        <th scope="col">Name</th>
+                        <th scope="col">Imagem</th>
+                    </tr>
                 </thead>
                 <tbody>
-                  <tr >                                        
-                    <td grifarParagrafo > {{ pokemonDetalhe.name | dataPipe }}</td>
-                    <td> <img [src]="pokemonDetalhe.sprites?.front_default" alt="">  </td>                    
-                  </tr>                  
+                    <tr>
+                        <td> {{ pokemonDetalhe.name }}</td>
+                        <td> <img [src]="pokemonDetalhe.sprites?.front_default" alt=""> </td>
+                    </tr>
                 </tbody>
-              </table>
+            </table>
         </div>
 
-    </div>    
+    </div>
 </div>
 
 <!-- {{ pokemonDetalhe | json }} -->
-    
-
