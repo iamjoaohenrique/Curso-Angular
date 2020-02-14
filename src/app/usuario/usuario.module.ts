@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
+import { GrifarParagrafoDirective } from './diretivas/grifar-paragrafo.directive';
 
 
 
@@ -9,7 +10,8 @@ import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.compo
 @NgModule({
   declarations: [
     UsuarioFormComponent,
-    UsuarioDetalheComponent
+    UsuarioDetalheComponent,
+    GrifarParagrafoDirective
   ],
   imports: [
     CommonModule

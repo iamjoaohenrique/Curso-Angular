@@ -74,7 +74,6 @@ export class UsuarioFormComponent implements OnInit {
   }
 
   trocarLimit(value) {
-    console.log(value);
     this.limit=value;
     this.getAllPokemons();
   }
