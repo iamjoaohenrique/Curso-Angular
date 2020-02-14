@@ -2,7 +2,7 @@ import { element } from 'protractor';
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
-  selector: 'p[grifarParagrafo]'
+  selector: '[grifarParagrafo]'
 })
 export class GrifarParagrafoDirective {
 
