@@ -29,6 +29,9 @@
         </tbody>
     </table>
 
+    {{ '2020-02-14T12:44:05Z'| dataPipe }}
+    
+    {{ '2020-02-14T12:44:05Z'| date: 'dd/MM/yyyy'}}
 
     <app-usuario-detalhe *ngIf="pokemonSelecionado != null" [pokemonDetalhe]="pokemonSelecionado"></app-usuario-detalhe>
 

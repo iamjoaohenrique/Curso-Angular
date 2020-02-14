@@ -3,7 +3,7 @@
     <div class="card " style="width: auto;">
         <div class="card-body">
             <h5 class="card-title">Pokemon</h5>
-            <p class="card-text">{{ pokemonDetalhe.name}} </p>
+            <p class="card-text">{{ pokemonDetalhe.name | uppercase }} </p>
             <table class="table">
                 <thead>
                     <tr>
@@ -13,7 +13,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td> {{ pokemonDetalhe.name }}</td>
+                        <td> {{ pokemonDetalhe.name | dataPipe }}</td>
                         <td><img [src]="pokemonDetalhe.sprites?.front_default" alt=""></td>
                     </tr>
                 </tbody>
