@@ -1,24 +1,6 @@
-<app-primeiro></app-primeiro>
+<app-menu></app-menu>
 
-
-<div class="form-group">
-
-    <label for="nome">Nome</label>
-    <input type="text" class="form-control" [(ngModel)]="nome">
-
+<!-- <app-usuario-form></app-usuario-form> -->
+<div class="container">
+    <router-outlet></router-outlet>
 </div>
-
-<!--<input type="button" value="{{ xx }}" class="btn btn-primary"> <br><br>
-
-{{ title }}
-{{ 1+1 }}
-
-<input type="button" [value]="xx" class="btn btn-success"> <br><br>
-
-<input type="text" (keyup)="show(texto.value)" (blur)="showoutro(texto.value)" class="form-control" #texto > <br><br>
-
-
-
-<input type="button" class="btn btn-success" (click)=mudarvalor()>-->
-
-<app-usuario-form></app-usuario-form>
