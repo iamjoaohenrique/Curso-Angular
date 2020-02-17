@@ -2,18 +2,43 @@
 <form #meuForm="ngForm" (submit)="onSubmit(meuForm)">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="digite seu email" 
-    #emailInput ngModel name="emailInput" required>
+    <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="digite seu email"
+      #emailInput="ngModel" [(ngModel)]="emailModel" name="emailInput" required min="3" 
+      [class.is-invalid]="isError(emailInput)"
+      [class.is-valid]="isSucess(emailInput)">
+
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
+
+  <app-show-erros [isErrorFilho]="isError(emailInput)"
+    mensagem="Email obrigatória">  
+  </app-show-erros>
+
+  <app-debug-campo [campoFilho]=emailInput> </app-debug-campo>
+
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" placeholder="digite sua senha"
-    #senhaInput ngModel name="senhaInput" required>
+     #senhaInput="ngModel" [(ngModel)]="senhaModel" name="senhaInput" required min="3"
+    [class.is-invalid]="isError(senhaInput)"
+    [class.is-valid]="isSucess(senhaInput)" >
   </div>
+
+  <app-show-erros [isErrorFilho]="isError(senhaInput)"
+    mensagem="A senha é obrigatória">  
+  </app-show-erros>
+
+  <app-debug-campo [campoFilho]=senhaInput > 
+
+  </app-debug-campo>
+  
+
   <div class="form-check">
     <input type="checkbox" class="form-check-input">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" [disabled]="meuForm.valid == false" class="btn btn-primary">Enviar</button>
+
+  <app-debug-form [formFilho]=meuForm> </app-debug-form>
+
 </form>
