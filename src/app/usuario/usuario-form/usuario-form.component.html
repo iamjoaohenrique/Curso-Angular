@@ -1,4 +1,4 @@
-<div class="text-center">
+<!--<div class="text-center">
     <p grifarParagrafo>componente usuario form</p>
 
 
@@ -33,7 +33,7 @@
 
     {{ '2020-02-14T12:44:05Z'| date: 'dd/MM/yyyy'}}
 
-    <!-- pokemons -->
+     pokemons 
     <table class="table table-dark m-2">
         <thead>
             <tr>
@@ -49,11 +49,69 @@
                 <td> {{ u.employee_name }}</td>
                 <td> {{ u.employee_salary }}</td>
                 <td>{{ u.employee_age }}</td>
-                <!-- <td><a [href]="u.url" target="blank">ver mais detalhes</a></td> -->
+                < <td><a [href]="u.url" target="blank">ver mais detalhes</a></td> 
             </tr>
         </tbody>
     </table>
-    <!-- <input type="button" class="btn-primary btn-lg m-4" (click)="proximaPagina()" value="proxima pagina"> -->
+    <input type="button" class="btn-primary btn-lg m-4" (click)="proximaPagina()" value="proxima pagina"> 
 
 
-</div>
+</div>-->
+<form [formGroup]="meuForm" (submit)=onSubmit() class="mb-5">
+
+    <div class="form-row mt-5">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Nome</label>
+            <input type="email" class="form-control"  placeholder="Nome">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Senha</label>
+            <input type="password" class="form-control"  placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Email</label>
+        <input type="text" class="form-control"  placeholder="Email">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="inputZip">Tipo de Usuário</label>
+            <input type="text" class="form-control" >
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">CEP</label>
+            <input type="text" class="form-control" >
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputPassword4">Cidade</label>
+            <input type="password" class="form-control"  placeholder="São Paulo">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Logradouro</label>
+            <input type="email" class="form-control"  placeholder="Nome da Rua">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputEmail4">Número</label>
+            <input type="email" class="form-control" placeholder="Número da Casa">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Complemento</label>
+            <input type="email" class="form-control"  placeholder="Complemento">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-8">
+            <label for="inputEmail4">Bairro</label>
+            <input type="email" class="form-control"  placeholder="Bairro">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Estado</label>
+            <input type="password" class="form-control" placeholder="SP">
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-block btn-primary">Cadastrar</button>
+</form>
