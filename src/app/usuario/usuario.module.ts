@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioRoutingModule } from './usuario-routing.module';
 import { NgModule } from '@angular/core';
@@ -7,13 +8,6 @@ import { GrifarParagrafoDirective } from './diretivas/grifar-paragrafo.directive
 import { DataPipe } from './pipes/data.pipe';
 import { TemplateFormComponent } from './template-form/template-form.component';
 import { DataFormComponent } from './data-form/data-form.component';
-import { ShowErrosComponent } from './messages/show-erros/show-erros.component';
-import { DebugCampoComponent } from './messages/debug-campo/debug-campo.component';
-import { DebugFormComponent } from './messages/debug-form/debug-form.component';
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -21,18 +15,14 @@ import { DebugFormComponent } from './messages/debug-form/debug-form.component';
     GrifarParagrafoDirective,
     DataPipe,
     TemplateFormComponent,
-    DataFormComponent,
-    ShowErrosComponent,
-    DebugCampoComponent,
-    DebugFormComponent,
-   
+    DataFormComponent   
   ],
   imports: [
     CommonModule,
     UsuarioRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     UsuarioFormComponent,
